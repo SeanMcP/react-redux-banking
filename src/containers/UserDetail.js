@@ -71,5 +71,13 @@ component.
 
 */
 
+function mapDispatchToProps(dispatch) {
+  return {
+    selectAccount: function(filter) {
+      dispatch(selectAccount(filter));
+    }
+  }
+}
 
-export default connect(mapStateToProps,  mapDispatchToProps)(UserDetail);
+
+export default connect(mapStateToProps, mapDispatchToProps)(UserDetail);
