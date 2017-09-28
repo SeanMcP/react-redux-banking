@@ -30,11 +30,6 @@ class UserList extends Component {
 }
 
 function mapStateToProps(state) {
-  let selectedUser;
-  console.log('state on UserList: ', state);
-  // if(state.filter === 'selectedUser') {
-  //   selectedUser = state.users.filter(user => user._id === this.props.match.params._id);
-  // }
     return {users: state.users, selectedUser: state.selectedUser};
 }
 

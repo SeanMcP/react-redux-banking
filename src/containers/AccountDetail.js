@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { selectAccount }  from '../actions/index';
 //make sure action created flows through all reducers
-import { bindActionCreators } from 'redux';
+// import { bindActionCreators } from 'redux';
 //import router Link
 import { Link } from 'react-router-dom';
 
@@ -48,14 +48,6 @@ function mapStateToProps(state) {
   };
 }
 
-
-/*
-
-You will need to create a mapDispatchToProps function here and
-return the action creator selectAccount - HINT: see the UserList
-component.
-
-*/
 
 function mapDispatchToProps(dispatch) {
   return {
