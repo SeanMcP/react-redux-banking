@@ -24,7 +24,7 @@ const reducer = function(state = initialState, action) {
         */
         case ACCOUNT_SELECTED:
           return update(state, {
-            selectAccount: {
+            selectedAccount: {
               $set: action.payload
             }
           })

@@ -11,20 +11,17 @@ import { Link } from 'react-router-dom';
 class UserDetail extends Component {
 
   render() {
-    console.log('this.props: ', this.props);
-    console.log('this.state', this.state);
-    let displayUser = this.props.users.filter(user => user._id === this.props.match.params.id);
-    console.log('displayUser', displayUser);
-    // if(!this.props.user) {
-    //   return (
-    //     <div>Please select a user...</div>
-    //   )
-    // }
+
+    if(!this.props.user) {
+      return (
+        <div>Please select a user...</div>
+      )
+    }
 
     //get user id from params of URL
     const { id } = this.props.match.params;
     //map over the accounts for the user to create links to them.
-    let accounts = displayUser[0].accounts.map(account => {
+    let accounts = this.props.user.accounts.map(account => {
 
       //creating a Link with the account type for
       //each account.
@@ -39,14 +36,14 @@ class UserDetail extends Component {
     })
     return (
       <div className="col-md-6">
-        <div className= "card">
+        <div className= "card my-3">
           <div className= "card-block m-3">
             <h4 className= "card-title">Account Information</h4>
-            <h6 className= "card-subtitle mb-2 text-muted">{displayUser[0].name}</h6>
+            <h6 className= "card-subtitle mb-2 text-muted">{this.props.user.name}</h6>
             <div className= "card-text">
-              <div>{displayUser[0].email}</div>
-              <div>{displayUser[0].phone}</div>
-              <div>{displayUser[0].address}</div>
+              <div>{this.props.user.email}</div>
+              <div>{this.props.user.phone}</div>
+              <div>{this.props.user.address}</div>
 
             </div>
             {accounts}
@@ -62,11 +59,12 @@ class UserDetail extends Component {
 
 function mapStateToProps(state) {
   console.log('state on UserDetail: ', state);
+  let user = state.users.filter(singleUser => singleUser._id === state.selectedUser)
   return {
-    user: state.user,
-    users: state.users,
-    selectedUser: state.selectedUser,
-    account: state.selectedAccount
+    user: user[0]
+    // users: state.users,
+    // selectedUser: state.selectedUser,
+    // account: state.selectedAccount
   };
 }
 
@@ -81,6 +79,7 @@ component.
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
+    selectAccount: selectAccount,
     selectUser: selectUser
   }, dispatch)
 }

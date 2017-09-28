@@ -21,7 +21,7 @@ class UserList extends Component {
         return (
             <div className="m-3">
               <h5>Users with open accounts:</h5>
-              <ul>
+              <ul className="mt-3">
                 {users}
               </ul>
             </div>
