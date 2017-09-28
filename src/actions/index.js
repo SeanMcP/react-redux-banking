@@ -17,10 +17,17 @@ payload: accountId
 
 ************************************/
 
+export function selectAccount(accountId) {
+  return {
+    type: ACCOUNT_SELECTED,
+    payload: accountId
+  }
+}
+
 export function withdrawFunds(amount) {
   return {
     type: WITHDRAW_FUNDS,
-    //need to change the amount to an integer value
+    //Changes the amount to an integer value
     payload: parseInt(amount, 10)
   }
 }

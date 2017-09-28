@@ -22,6 +22,12 @@ const reducer = function(state = initialState, action) {
           You will need to correct a reducer case for ACCOUNT_SELECTED here - HINT: it should mimic closely the USER_SELECTED case.
 
         */
+        case ACCOUNT_SELECTED:
+          return update(state, {
+            selectAccount: {
+              $set: action.payload
+            }
+          })
         case WITHDRAW_FUNDS:
             const userIdx = state.users.findIndex(user => user._id === state.selectedUser);
             const accountIdx = state.users[userIdx].accounts.findIndex(account => account.id === state.selectedAccount);
