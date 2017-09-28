@@ -39,7 +39,7 @@ class AccountDetail extends Component {
     //   backdrop: false
     // };
 
-    this.toggle = this.toggle.bind(this);
+    // this.toggle = this.toggle.bind(this);
   }
 
   // MODAL-SPECIFIC FUNCTIONS
@@ -77,8 +77,10 @@ class AccountDetail extends Component {
             <div className="d-flex justify-content-between">
               <p>Withdraw:</p>
               <span onClick={() => this.props.withdrawFunds(5)} className="btn btn-primary">$5</span>
-              <Link className="btn btn-primary" to={`/users/${this.props.user._id}`} >Back</Link>
+              <span onClick={() => this.props.withdrawFunds(10)} className="btn btn-success">$10</span>
+              <span onClick={() => this.props.withdrawFunds(20)} className="btn btn-danger">$20</span>
             </div>
+            <Link className="btn btn-secondary btn-block mt-3" to={`/users/${this.props.user._id}`} >Back</Link>
           </div>
         </div>
         {/*<Button color="danger" onClick={this.toggle}>Click Me{this.props.buttonLabel}</Button>
