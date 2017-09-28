@@ -23,13 +23,15 @@ class AccountDetail extends Component {
         <div className= "card my-3">
           <div className= "card-block m-3">
             <h4 className= "card-title">Account Information</h4>
-            <h6 className= "card-subtitle mb-2 text-muted">{this.props.account.accountType} account for {this.props.user.name}</h6>
-            <div className= "card-text">
+            <h6 className= "card-subtitle mb-2 text-muted"><b style={{textTransform: 'capitalize'}}>{this.props.account.accountType}</b> account for {this.props.user.name}</h6>
+            <div className= "card-text mb-2">
               <div>Balance: {this.props.account.balance}</div>
             </div>
-
+            <div className="d-flex justify-content-between">
+              <Link className="btn btn-danger mr-3" to="/users" >Withdraw funds</Link>
+              <Link className="btn btn-primary" to={`/users/${this.props.user._id}`} >Back to user details</Link>
+            </div>
           </div>
-          <Link className="btn btn-primary" to="/users" >Back to List of Users</Link>
         </div>
       </div>
     );
