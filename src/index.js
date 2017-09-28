@@ -12,7 +12,7 @@ import reducers from './reducers';
 
 //import styles
 import './styles/index.css';
-import 'bootstrap/dist/css/bootstrap.css';
+import './styles/bootstrap/css/bootstrap.css';
 
 //component imports
 import App from './components/App';
@@ -29,14 +29,14 @@ const createStoreWithMiddleware = applyMiddleware()(createStore);
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())}>
     <BrowserRouter>
-      <Baselayout>
+      <BaseLayout>
         <Switch>
           <Route exact path="/" component={App} />
           <Route path="/users/:id/:accountID" component={AccountDetail} />
           <Route path="/users/:id" component={UserDetail} />
           <Route path="/users" component={UserList} />
         </Switch>
-      </Baselayout>
+      </BaseLayout>
     </BrowserRouter>
   </Provider>
 
