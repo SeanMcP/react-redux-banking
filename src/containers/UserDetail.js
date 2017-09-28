@@ -61,9 +61,6 @@ function mapStateToProps(state) {
   let user = state.users.filter(singleUser => singleUser._id === state.selectedUser)
   return {
     user: user[0]
-    // users: state.users,
-    // selectedUser: state.selectedUser,
-    // account: state.selectedAccount
   };
 }
 
@@ -82,12 +79,6 @@ function mapDispatchToProps(dispatch) {
     selectUser: selectUser
   }, dispatch)
 }
-// COPIED FROM UserList
-// function mapDispatchToProps(dispatch) {
-//     return bindActionCreators({
-//         selectUser: selectUser
-//     }, dispatch)
-// }
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserDetail);
