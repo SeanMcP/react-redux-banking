@@ -78,6 +78,12 @@ function mapDispatchToProps(dispatch) {
     }
   }
 }
+// COPIED FROM UserList
+// function mapDispatchToProps(dispatch) {
+//     return bindActionCreators({
+//         selectUser: selectUser
+//     }, dispatch)
+// }
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserDetail);

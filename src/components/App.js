@@ -9,7 +9,6 @@ import '../styles/App.css';
 class App extends Component {
   render() {
     return (
-
         <div className="main">
           <div className= "jumbotron">
             <h1 className= "display-3">BankShot</h1>
@@ -18,11 +17,9 @@ class App extends Component {
             <p>Quick, fast, and sometimes accurate account results.</p>
             <p className= "lead">
               <Link className= "btn btn-primary btn-lg" to="/users" role="button">Check Users</Link>
-              </p>
-            </div>
+            </p>
+          </div>
         </div>
-
-
     );
   }
 }

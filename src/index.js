@@ -17,6 +17,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 //component imports
 import App from './components/App';
 //BaseLayout imported...Here
+import BaseLayout from './components/BaseLayout';
 import UserList from './containers/UserList';
 import UserDetail from './containers/UserDetail';
 import AccountDetail from './containers/AccountDetail';
@@ -28,14 +29,14 @@ const createStoreWithMiddleware = applyMiddleware()(createStore);
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())}>
     <BrowserRouter>
-      {/*Baselayout?*/}
-      <Switch>
-        <Route exact path="/" component={App} />
-        <Route path="/users/:id/:accountID" component={AccountDetail} />
-        <Route path="/users/:id" component={UserDetail} />
-        <Route path="/users" component={UserList} />
-      </Switch>
-      {/*Baselayout?*/}
+      <Baselayout>
+        <Switch>
+          <Route exact path="/" component={App} />
+          <Route path="/users/:id/:accountID" component={AccountDetail} />
+          <Route path="/users/:id" component={UserDetail} />
+          <Route path="/users" component={UserList} />
+        </Switch>
+      </Baselayout>
     </BrowserRouter>
   </Provider>
 
